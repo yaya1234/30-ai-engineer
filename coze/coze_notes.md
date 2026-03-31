@@ -21,6 +21,14 @@
 - 链接：[文案助手] https://www.coze.cn/store/agent/7622617565433036800?bot_id=true
 - 测试通过，可生成小红书风格完整文案
 
+## Day 5 辅线：Coze 工作流调用本地模型 API（通过 ngrok）
+- 模型 API：Titanic 生存预测（Flask 服务），运行在本地 Docker 容器，端口 5000。
+- 内网穿透：使用 ngrok 将本地服务暴露到公网，地址为 `https://claude-unblasphemed-tona.ngrok-free.dev/predict`。
+- 链接：[文案助手] https://www.coze.cn/space/7601859373627441194/bot/7623389956567891994
+- 测试通过，可成功调用api
+
+
+
 ## 使用心得
 - 文案助手的提示词优化很关键，明确角色和输出格式后生成质量明显提升。
 - 产品问答助手需要知识库文档内容清晰，否则回答可能不准确。
