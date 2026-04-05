@@ -1,12 +1,12 @@
 import streamlit as st
+import tempfile
+import os
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.llms import Tongyi
 from langchain.chains import RetrievalQA
-import tempfile
-import os
 
 st.set_page_config(page_title="学霸助手 - 考证资料库", layout="wide")
 st.title("📚 学霸助手 · 专属资料库（RAG）")
@@ -20,7 +20,7 @@ if "vectorstore" not in st.session_state:
 # 侧边栏：上传文档
 with st.sidebar:
     st.header("📂 上传学习资料")
-    uploaded_file = st.file_uploader("支持 PDF、TXT、Word", type=["txt", "pdf", "docx"])
+    uploaded_file = st.file_uploader("支持 TXT、PDF、Word", type=["txt", "pdf", "docx"])
     if uploaded_file is not None:
         # 保存临时文件
         with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as tmp:
@@ -34,7 +34,7 @@ with st.sidebar:
         # 创建向量库（使用阿里云通义嵌入）
         embeddings = DashScopeEmbeddings(
             model="text-embedding-v1",
-            dashscope_api_key=st.secrets["DASHSCOPE_API_KEY"]  # 需要设置 secrets
+            dashscope_api_key=st.secrets["DASHSCOPE_API_KEY"]
         )
         st.session_state.vectorstore = Chroma.from_documents(texts, embeddings)
         os.unlink(tmp_path)
