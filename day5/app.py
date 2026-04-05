@@ -3,7 +3,7 @@ import pandas as pd
 from flask import Flask, request, jsonify
 
 # 加载模型
-model = joblib.load("titanic_rf_model.pkl")
+model = joblib.load("titanic_rf_best.pkl")
 
 # 特征顺序
 features = ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked", "FamilySize", "Title"]

@@ -12,7 +12,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langgraph.prebuilt import create_react_agent
 
 # ---------- 阿里云配置 ----------
-API_KEY = "sk-6297c7549fc645cc98ba49b0590c2251"  # 替换为你的真实 key
+API_KEY = ""  # 替换为你的真实 key
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 llm = ChatOpenAI(
