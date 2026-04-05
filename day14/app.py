@@ -6,7 +6,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.llms import Tongyi
-from langchain.chains import RetrievalQA
+from langchain_classic.chains import RetrievalQA
 
 st.set_page_config(page_title="学霸助手 - 考证资料库", layout="wide")
 st.title("📚 学霸助手 · 专属资料库（RAG）")
