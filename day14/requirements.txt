@@ -1,10 +1,9 @@
 streamlit
-python-dotenv
 langchain
 langchain-community
 langchain-text-splitters
-langchain_classic
-chromadb
-dashscope
+langchain-huggingface
+faiss-cpu
+sentence-transformers
 pypdf
 docx2txt
